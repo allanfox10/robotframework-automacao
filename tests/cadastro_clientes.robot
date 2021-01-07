@@ -10,22 +10,28 @@ Suite Teardown    Finish Session
 
 
 ***Test Cases***
-Novo cliente 1
+Novo cliente
+    [Tags]          cliente
     Dado que acesso o formulário de cadastro de clientes
-    Quando faço a inclusão desse cliente:
+    E que eu tenho o seguinte cliente:
     ...     Bon Jovi    00000001406     Rua dos bugs,1000       11999999999
+    Quando faço a inclusão desse cliente
     Então devo ver a notificação:   Cliente cadastrado com sucesso!
+    E esse cliente deve ser exibido na lista
 
-Novo cliente 2
-    Dado que acesso o formulário de cadastro de clientes
-    Quando faço a inclusão desse cliente:
-    ...     Allan James    29756484802     Rua Agostinho Rubin,1000       11999999989
-    Então devo ver a notificação:   Cliente cadastrado com sucesso!
+
+#Novo cliente 2
+#    Dado que acesso o formulário de cadastro de clientes
+#    Quando faço a inclusão desse cliente:
+#    ...     Allan James    29756484802     Rua Agostinho Rubin,1000       11999999989
+#    Então devo ver a notificação:   Cliente cadastrado com sucesso!
 
 Campos Obrigatórios
+    [Tags]          obrigatorio
     Dado que acesso o formulário de cadastro de clientes
-    Quando faço a inclusão desse cliente:
-    ...     ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    E que eu tenho o seguinte cliente:
+     ...     ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    Quando faço a inclusão desse cliente   
     Então devo ver mensagens informando que os campos do cadastro de clientes são obrigatórios
 
 Nome é Obrigatório
@@ -59,8 +65,9 @@ Validação de Campos
     [Arguments]     ${nome}     ${cpf}      ${endereco}     ${telefone}     ${saida}
 
     Dado que acesso o formulário de cadastro de clientes
-    Quando faço a inclusão desse cliente:
+    E que eu tenho o seguinte cliente:
     ...     ${nome}     ${cpf}      ${endereco}     ${telefone}
+    Quando faço a inclusão desse cliente
     Então devo ver o texto:     ${saida}     
 
    
