@@ -1,0 +1,30 @@
+{
+    "data": [
+        {
+            "name": "Allan James",
+            "cpf": "204.492.150-24",
+            "address": "Rua Americo,921",
+            "phone_number": "(11)9.6665-5001"
+        },    
+        {
+            "name": "Bruna Candido",
+            "cpf": "399.492.150-24",
+            "address": "Rua Souza,001",
+            "phone_number": "(11)9.8564-5001"
+        },    
+        {
+            "name": "Isabela Coutinho",
+            "cpf": "599.492.150-24",
+            "address": "Rua Morais,100",
+            "phone_number": "(11)9.4568-5001"
+        },    
+        {
+            "name": "Thor Coutinho",
+            "cpf": "999.492.150-24",
+            "address": "Rua do Belga,1010",
+            "phone_number": "(11)9.1111-5001"
+        }    
+
+    ]
+
+}
