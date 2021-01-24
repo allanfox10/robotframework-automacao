@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image 'python'
+            args '--network=zepalheta-network'
         }
     }    
 
@@ -18,3 +19,4 @@ pipeline {
         }    
     }
 }
+
