@@ -15,6 +15,7 @@ pipeline {
         stage('Testes de API') {
             steps {
             sh 'robot -d ./logs tests/api/customers'
+            robot 'logs'
             }
         }    
     }
