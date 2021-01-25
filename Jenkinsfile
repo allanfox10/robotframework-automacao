@@ -14,15 +14,10 @@ pipeline {
         }
         stage('Testes de API') {
             steps {
-                sh 'robot -d ./logs tests/api/customers'
-             }
-        }
-        stage('Testes de API') {
-            steps {
-                sh 'robot -d ./logs tests/api/sessions'
-             }
-        }  
-    }     
+                sh 'robot -d ./logs tests/api'
+                }
+        }    
+    }
     post {
         always {
              robot 'logs'  
