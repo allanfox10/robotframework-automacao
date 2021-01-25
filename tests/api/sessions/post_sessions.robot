@@ -6,7 +6,7 @@ Resource    ../../../resources/services.robot
 Login com sucesso - API
     
     ${resp}=            Post Session        admin@zepalheta.com.br      pwd123              
-    Status Should Be     200     ${resp}   
+    Status Should Be     201     ${resp}   
     
 Senha incorreta - API
     
