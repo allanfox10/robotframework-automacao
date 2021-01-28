@@ -12,10 +12,16 @@ pipeline {
                 sh 'pip install -r requirements.txt'
                   }
         }
-        stage('Testes de API') {
+        stage('API Test') {
             steps {
                 sh 'robot -d ./logs tests/api'
                 }
+        }
+        stage('UI Tests'){
+            steps {
+                input (message:'Podemos rodar os testes?')
+                sh 'robot -d ./logs tests/web'
+            }
         }    
     }
     post {
