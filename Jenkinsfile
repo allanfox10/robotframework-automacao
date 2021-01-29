@@ -14,18 +14,18 @@ pipeline {
         }
         stage('API Test') {
             steps {
-                sh 'robot -d ./logs tests/api'
+                sh 'robot -d ./logs/api tests/api'
                 }
         }
         stage('UI Tests'){
             steps {
-                sh 'robot -d ./logs -i cliente -v browser:headless tests/web'
+                sh 'robot -d ./logs/web -i cliente -v browser:headless tests/web'
             }
         }    
     }
     post {
         always {
-             robot 'logs'  
+             robot disableArchiveOutput: true, logFileName: '**/log.html', otherFiles: '**/*.png,**/*.jpg', outputFileName: '**/output.xml', outputPath: 'logs', reportFileName: '**/report.html'  
         }
     }     
 
